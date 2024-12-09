@@ -13,7 +13,7 @@ public enum CardState
 public class CardScript : MonoBehaviour
 {
     [System.NonSerialized] public CardObject cardObject;
-    [SerializeField] TextMeshProUGUI cardCost;
+    [SerializeField] TextMeshProUGUI score;
     [SerializeField] TextMeshProUGUI cardName;
     [SerializeField] TextMeshProUGUI cardDescription;
     [SerializeField] SpriteRenderer artRenderer;
@@ -24,7 +24,6 @@ public class CardScript : MonoBehaviour
     float speed = 20;
     CardState cardState = CardState.DRAWING;
     PlayerManager playerManager;
-    PlayerConditions playerConditions;
     GameManager gameManager;
 
     // Start is called before the first frame update
@@ -32,9 +31,8 @@ public class CardScript : MonoBehaviour
     {
         gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
         playerManager = handManager.GetComponent<PlayerManager>();
-        playerConditions = playerManager.GetComponent<PlayerConditions>();
 
-        cardCost.text = cardObject.cost.ToString();
+        score.text = cardObject.score.ToString();
         cardName.text = cardObject.name;
         cardDescription.text = cardObject.description;
         artRenderer.sprite = cardObject.cardArt;
@@ -89,19 +87,6 @@ public class CardScript : MonoBehaviour
             {
                 case "PlayZone":
                     PlayCard();
-                    break;
-                case "Project":
-                    Project project = playerManager.hoverTransform.GetComponent<Project>();
-                    if(project.ProjectState == ProjectState.NEW)
-                    {
-                        cardState = CardState.CHOOSESHAPE;
-                        destination = chooseShapeDestination;
-                        project.NewProject(this);
-                    }
-                    else if(project.ProjectState == ProjectState.INPROGRESS)
-                    {
-                        
-                    }
                     break;
                 default:
                     cardState = CardState.HAND;

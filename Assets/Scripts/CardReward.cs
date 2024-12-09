@@ -16,7 +16,6 @@ public class CardReward : MonoBehaviour
     public void Setup(CardObject card)
     {
         cardObject = card;
-        cardCost.text = cardObject.cost.ToString();
         cardName.text = cardObject.name;
         cardDescription.text = cardObject.description;
         artRenderer.sprite = cardObject.cardArt;

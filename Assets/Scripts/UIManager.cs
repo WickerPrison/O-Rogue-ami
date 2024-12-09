@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class UIManager : MonoBehaviour
 {
-    [SerializeField] ShapeSelect shapeSelect;
     [SerializeField] GameObject youLose;
     [SerializeField] GameObject youWin;
     GameManager gameManager;
@@ -12,14 +11,6 @@ public class UIManager : MonoBehaviour
     private void Start()
     {
         gameManager = GetComponent<GameManager>();
-    }
-
-    public void OpenShapeSelectMenu(CardScript cardScript, Project project)
-    {
-        shapeSelect.gameObject.SetActive(true);
-        shapeSelect.gameManager = gameManager;
-        shapeSelect.OpenMenu(cardScript, project);
-        gameManager.gameState = GameState.MENU;
     }
 
     public void LoseGame()
