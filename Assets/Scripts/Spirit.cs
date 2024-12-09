@@ -35,7 +35,7 @@ public class Spirit : MonoBehaviour
         if(gameManager.gameState != GameState.GAMEOVER)
         {
             conditions.IncrementConditions();
-            gameManager.StartPlayerTurn();
+            gameManager.StartMatch();
         }
     }
 

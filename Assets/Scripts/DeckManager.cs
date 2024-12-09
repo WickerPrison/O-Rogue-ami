@@ -20,9 +20,9 @@ public class DeckManager : MonoBehaviour
         drawPile = new Queue<CardObject>(playerData.deck);
     }
 
-    private void OnPlayerTurn(object sender, System.EventArgs e)
+    private void OnStartMatch(object sender, System.EventArgs e)
     {
-        DrawHand(5);
+        DrawHand(6);
     }
 
     void DrawHand(int handSize)
@@ -41,22 +41,14 @@ public class DeckManager : MonoBehaviour
         EventManager.Instance.Discard();
     }
 
-    public void ShuffleDiscardIntoDraw()
-    {
-        discardPile.Shuffle();
-        drawPile = new Queue<CardObject>(discardPile);
-        discardPile.Clear();
-        EventManager.Instance.ShuffleIntoDraw();
-    }
-
     private void OnEnable()
     {
-        EventManager.Instance.OnPlayerTurn += OnPlayerTurn;
+        EventManager.Instance.OnStartMatch += OnStartMatch;
     }
 
     private void OnDisable()
     {
-        EventManager.Instance.OnPlayerTurn -= OnPlayerTurn;
+        EventManager.Instance.OnStartMatch -= OnStartMatch;
     }
 
 }

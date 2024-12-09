@@ -21,8 +21,7 @@ public class HandManager : MonoBehaviour
     {
         if(deckManager.drawPile.Count == 0)
         {
-            if (deckManager.discardPile.Count == 0) return;
-            deckManager.ShuffleDiscardIntoDraw();
+            return;
         }
         CardObject cardObject = deckManager.drawPile.Dequeue();
         CardScript card = Instantiate(cardPrefab).GetComponent<CardScript>();

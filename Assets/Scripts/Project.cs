@@ -22,7 +22,6 @@ public class Project : MonoBehaviour
     [System.NonSerialized] public ProjectZone projectZone;
     OragamiAbilities oragamiAbilities;
     Spirit spirit;
-    DisplayZone displayZone;
     UIManager uiManager;
     int folds;
     ShapeObject shapeObject;
@@ -70,7 +69,6 @@ public class Project : MonoBehaviour
     {
         projectZone = GetComponentInParent<ProjectZone>();
         oragamiAbilities = projectZone.GetComponent<OragamiAbilities>();
-        displayZone = GameObject.FindGameObjectWithTag("DisplayZone").GetComponent<DisplayZone>();
         spirit = GameObject.FindGameObjectWithTag("Spirit").GetComponent<Spirit>();
     }
 
@@ -102,7 +100,6 @@ public class Project : MonoBehaviour
     void FinishProject()
     {
         ProjectState = ProjectState.NEW;
-        displayZone.AddDisplayObject(shapeObject, cardObject, transform.position);
         int favorGain = 0;
         favorGain += shapeObject.favorOnFinish;
 

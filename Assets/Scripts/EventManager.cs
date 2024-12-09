@@ -11,8 +11,7 @@ public class EventManager : MonoBehaviour
         get{return instance;}
     }
 
-    public event EventHandler OnPlayerTurn;
-    public event EventHandler OnEndPlayerTurn;
+    public event EventHandler OnStartMatch;
     public event EventHandler OnDrawCard;
     public event EventHandler OnDiscard;
     public event EventHandler OnShuffleIntoDraw;
@@ -32,14 +31,9 @@ public class EventManager : MonoBehaviour
         }
     }
 
-    public void PlayerTurn()
+    public void StartMatch()
     {
-        OnPlayerTurn?.Invoke(this, EventArgs.Empty);
-    }
-
-    public void EndPlayerTurn()
-    {
-        OnEndPlayerTurn?.Invoke(this, EventArgs.Empty);
+        OnStartMatch?.Invoke(this, EventArgs.Empty);
     }
 
     public void DrawCard()

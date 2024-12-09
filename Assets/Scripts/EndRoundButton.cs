@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EndTurnButton : MonoBehaviour
+public class EndRoundButton : MonoBehaviour
 {
     GameManager gameManager;
 
@@ -15,7 +15,7 @@ public class EndTurnButton : MonoBehaviour
     {
         if(gameManager.gameState == GameState.PLAYERTURN)
         {
-            gameManager.EndPlayerTurn();
+            
         }
     }
 }

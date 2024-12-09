@@ -25,11 +25,6 @@ public class PlayerManager : MonoBehaviour
         layerMask = LayerMask.GetMask("Interactable");
     }
 
-    private void OnPlayerTurn(object sender, System.EventArgs e)
-    {
-        Energy = playerData.maxEnergy;
-    }
-
     private void Update()
     {
         Vector2 mousePos = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue());
@@ -44,15 +39,5 @@ public class PlayerManager : MonoBehaviour
         {
             hoverTransform = null;
         }
-    }
-
-    private void OnEnable()
-    {
-        EventManager.Instance.OnPlayerTurn += OnPlayerTurn;
-    }
-
-    private void OnDisable()
-    {
-        EventManager.Instance.OnPlayerTurn -= OnPlayerTurn;
     }
 }

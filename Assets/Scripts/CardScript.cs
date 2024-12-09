@@ -26,12 +26,10 @@ public class CardScript : MonoBehaviour
     PlayerManager playerManager;
     PlayerConditions playerConditions;
     GameManager gameManager;
-    Spirit spirit;
 
     // Start is called before the first frame update
     void Start()
     {
-        spirit = GameObject.FindGameObjectWithTag("Spirit").GetComponent<Spirit>();
         gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
         playerManager = handManager.GetComponent<PlayerManager>();
         playerConditions = playerManager.GetComponent<PlayerConditions>();
@@ -102,7 +100,7 @@ public class CardScript : MonoBehaviour
                     }
                     else if(project.ProjectState == ProjectState.INPROGRESS)
                     {
-                        PlayOnProject(project);
+                        
                     }
                     break;
                 default:
@@ -114,48 +112,7 @@ public class CardScript : MonoBehaviour
 
     void PlayCard()
     {
-        if (!SpendEnergy()) return;
 
-        if (cardObject.addFavor > 0)
-        {
-            spirit.GainFavor(cardObject.addFavor);
-            if (cardObject.specialAbilities.Contains(SpecialAbilities.MULTIFAVOR))
-            {
-                int index = cardObject.specialAbilities.IndexOf(SpecialAbilities.MULTIFAVOR);
-                int counter = (int)cardObject.specialAbilitiesAmounts[index];
-                counter--;
-                while (counter > 0)
-                {
-                    spirit.GainFavor(cardObject.addFavor);
-                    counter--;
-                }
-            }
-        }
-
-        if (cardObject.conditions.Count > 0)
-        {
-            for(int i = 0; i <  cardObject.conditions.Count; i++)
-            {
-                spirit.GetCondition(cardObject.conditions[i], cardObject.conditionAmounts[i]);
-            }
-        }
-
-        if(cardObject.buffs.Count > 0)
-        {
-            for(int i = 0; i < cardObject.buffs.Count; i++)
-            {
-                playerConditions.GetBuff(cardObject.buffs[i], cardObject.buffAmounts[i]);
-            }
-        }
-
-        if (cardObject.tags.Contains(CardTags.CRUMPLE))
-        {
-            Crumple();
-        }
-        else
-        {
-            Discard();
-        }
     }
 
 
@@ -181,34 +138,6 @@ public class CardScript : MonoBehaviour
         Destroy(gameObject);
     }
 
-    public void Crumple()
-    {
-        handManager.RemoveCard(this);
-        Destroy(gameObject);
-    }
-
-    void PlayOnProject(Project project)
-    {
-        if (!SpendEnergy()) return;
-
-        if(cardObject.addFolds > 0)
-        {
-            project.AddFolds(cardObject.addFolds + playerConditions.focus);
-        }
-        Discard();
-    }
-
-    bool SpendEnergy()
-    {
-        if (playerManager.Energy < cardObject.cost)
-        {
-            cardState = CardState.HAND;
-            return false;
-        }
-        playerManager.Energy -= cardObject.cost;
-        return true;
-    }
-
     private void OnEndPlayerTurn(object sender, System.EventArgs e)
     {
         Discard();
@@ -222,15 +151,5 @@ public class CardScript : MonoBehaviour
         {
             cardState = CardState.DRAGGING;
         }
-    }
-
-    private void OnEnable()
-    {
-        EventManager.Instance.OnEndPlayerTurn += OnEndPlayerTurn;
-    }
-
-    private void OnDisable()
-    {
-        EventManager.Instance.OnEndPlayerTurn -= OnEndPlayerTurn;       
     }
 }
