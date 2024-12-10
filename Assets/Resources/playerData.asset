@@ -12,19 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56137a9b39333bc468612e70150c8a30, type: 3}
   m_Name: playerData
   m_EditorClassIdentifier: 
-  maxEnergy: 3
   deck:
-  - {fileID: 11400000, guid: faac42303cc940c4b9babdd150f71c78, type: 2}
-  - {fileID: 11400000, guid: 634ab4b71cc49a142ae50f1242499273, type: 2}
-  - {fileID: 11400000, guid: 02c602f55e3aaa24abd322eb1e36e5b9, type: 2}
-  - {fileID: 11400000, guid: faac42303cc940c4b9babdd150f71c78, type: 2}
-  - {fileID: 11400000, guid: faac42303cc940c4b9babdd150f71c78, type: 2}
-  - {fileID: 11400000, guid: 02c602f55e3aaa24abd322eb1e36e5b9, type: 2}
-  - {fileID: 11400000, guid: 02c602f55e3aaa24abd322eb1e36e5b9, type: 2}
-  - {fileID: 11400000, guid: faac42303cc940c4b9babdd150f71c78, type: 2}
-  - {fileID: 11400000, guid: 634ab4b71cc49a142ae50f1242499273, type: 2}
-  - {fileID: 11400000, guid: faac42303cc940c4b9babdd150f71c78, type: 2}
-  knownShapes:
-  - {fileID: 11400000, guid: 4cbbe55ae17351a43a8c5a40521138c2, type: 2}
-  maxProjects: 2
-  mostRecentOragamiFavor: 10
+  - {fileID: 11400000, guid: 96cfe40802a8e6942beec5ddf3c6f581, type: 2}
+  - {fileID: 11400000, guid: 96cfe40802a8e6942beec5ddf3c6f581, type: 2}
+  - {fileID: 11400000, guid: dbc32a82365e9d44f91714dc9c18217b, type: 2}
+  - {fileID: 11400000, guid: 96cfe40802a8e6942beec5ddf3c6f581, type: 2}
+  - {fileID: 11400000, guid: dbc32a82365e9d44f91714dc9c18217b, type: 2}
+  - {fileID: 11400000, guid: 067303b1bb911504281cab23d44d584c, type: 2}
+  - {fileID: 11400000, guid: dbc32a82365e9d44f91714dc9c18217b, type: 2}
+  - {fileID: 11400000, guid: dbc32a82365e9d44f91714dc9c18217b, type: 2}
+  - {fileID: 11400000, guid: dbc32a82365e9d44f91714dc9c18217b, type: 2}
+  - {fileID: 11400000, guid: dbc32a82365e9d44f91714dc9c18217b, type: 2}
+  - {fileID: 11400000, guid: 067303b1bb911504281cab23d44d584c, type: 2}
+  - {fileID: 11400000, guid: 96cfe40802a8e6942beec5ddf3c6f581, type: 2}

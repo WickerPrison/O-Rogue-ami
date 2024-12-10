@@ -12,8 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91f7e21df35d2074ca5d1492423fcba9, type: 3}
   m_Name: GameData
   m_EditorClassIdentifier: 
-  cardPool:
-  - {fileID: 11400000, guid: 2c95fb8b5243e3848bb465fe73235189, type: 2}
-  - {fileID: 11400000, guid: 467d8ff54f46c3c43bc63c03e33028a6, type: 2}
-  - {fileID: 11400000, guid: 9252ed2be9db70f41ae190a97f8cf71d, type: 2}
-  - {fileID: 11400000, guid: 0aeb673ec5e53d3469227939b15c5384, type: 2}
+  cardPool: []

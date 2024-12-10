@@ -14,6 +14,7 @@ public class GameManager : MonoBehaviour
 {
     UIManager uiManager;
     [System.NonSerialized] public GameState gameState = GameState.GAMESTART;
+    [SerializeField] OragamiDisplay oragamiDisplay;
 
     // Start is called before the first frame update
     void Start()
@@ -26,6 +27,11 @@ public class GameManager : MonoBehaviour
     {
         gameState = GameState.PLAYERTURN;
         EventManager.Instance.StartMatch();
+    }
+
+    public void EndRound()
+    {
+        oragamiDisplay.CountScore();
     }
 
     public void LoseGame()

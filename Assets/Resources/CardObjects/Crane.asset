@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15af5e3b6af037141b739f059890fd37, type: 3}
   m_Name: Crane
   m_EditorClassIdentifier: 
-  cardName: 
-  description: 
-  cardArt: {fileID: 0}
+  cardName: Crane
+  score: 1
+  description: <b>When Played</b> +1 score until end of round
+  cardArt: {fileID: 21300000, guid: 1778b5f63a7b80549952d2769126f0b1, type: 3}

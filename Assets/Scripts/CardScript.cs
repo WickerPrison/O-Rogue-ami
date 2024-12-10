@@ -82,11 +82,10 @@ public class CardScript : MonoBehaviour
                 cardState = CardState.HAND;
                 return;
             }
-
             switch (playerManager.hoverTransform.tag)
             {
-                case "PlayZone":
-                    PlayCard();
+                case "DisplaySlot":
+                    DisplaySlot(playerManager.hoverTransform);
                     break;
                 default:
                     cardState = CardState.HAND;
@@ -109,6 +108,20 @@ public class CardScript : MonoBehaviour
         cardState = CardState.DISCARDING;
         handManager.Discard(this);
         destination = discardDestination;
+    }
+
+    void DisplaySlot(Transform displaySlotTransform)
+    {
+        DisplaySlot displaySlot = displaySlotTransform.GetComponent<DisplaySlot>();
+        if (displaySlot.PlayCard(cardObject))
+        {
+            handManager.RemoveCard(this);
+            Destroy(gameObject);
+        }
+        else
+        {
+            ReturnToHand();
+        }
     }
 
     public void ReturnToHand()

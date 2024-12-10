@@ -13,6 +13,8 @@ public class EndRoundButton : MonoBehaviour
 
     private void OnMouseDown()
     {
+        gameManager.EndRound();
+
         if(gameManager.gameState == GameState.PLAYERTURN)
         {
             

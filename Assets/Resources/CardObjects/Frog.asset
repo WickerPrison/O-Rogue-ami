@@ -12,7 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15af5e3b6af037141b739f059890fd37, type: 3}
   m_Name: Frog
   m_EditorClassIdentifier: 
-  cardName: 
+  cardName: Frog
   score: 0
-  description: 
-  cardArt: {fileID: 0}
+  description: '<b>When Folded</b> Gain points equal to 1 + the point value of the
+    Oragami to the left.
+
+    <b>When Played</b> [I don''t know yet]'
+  cardArt: {fileID: 21300000, guid: 13a255bb83895ad4d9df24e33665c5c4, type: 3}

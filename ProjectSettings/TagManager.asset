@@ -8,8 +8,8 @@ TagManager:
   - PlayerManager
   - Project
   - PlayZone
-  - DisplayZone
   - Spirit
+  - DisplaySlot
   layers:
   - Default
   - TransparentFX

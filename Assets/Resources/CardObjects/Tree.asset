@@ -12,7 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15af5e3b6af037141b739f059890fd37, type: 3}
   m_Name: Tree
   m_EditorClassIdentifier: 
-  cardName: 
+  cardName: Tree
   score: 0
-  description: 
-  cardArt: {fileID: 0}
+  description: '<b>When Folded</b> Gain points equal to the number of Oragamis in
+    row.
+
+    <b>When Played</b> +1 score on next round'
+  cardArt: {fileID: 21300000, guid: 8926ccbd3ffdd3647857a13f12ec02a4, type: 3}
